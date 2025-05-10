@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>mauDEV - Portafolio y Merch Oficial</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-..."
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header>
+    <nav class="nav-container">
+      <img src="/resources/logoFinal.png"
+           alt="Logo mauDEV"
+           class="logo" />
+
+      <!-- Botón hamburguesa -->
+      <div class="nav-toggle" id="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#hero"    class="nav-link">Inicio</a></li>
+        <li><a href="#projects"class="nav-link">Proyectos</a></li>
+        <li><a href="#blog"    class="nav-link">Blog</a></li>
+        <li><a href="#contact" class="nav-link">Contacto</a></li>
+      </ul>
+
+        <!-- Botón de compra -->
+        <div class="nav-cart">
+          <a href="#shop" class="nav-cart-link">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">Tienda Oficial</span>
+          </a>
+    </nav>
+
+    <!-- Capa que se difumina al abrir menú -->
+    <div class="blur-background" id="blur-background"></div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Transformando ideas en soluciones digitales</h1>
+          <p>Desarrollador full-stack especializado en experiencias web y aplicaciones escalables.</p>
+          <div class="cta-buttons">
+            <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
+            <a href="#contact"  class="btn btn-secondary">Contactar</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="assets/hero-image.jpg" alt="Desarrollo Web" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section id="projects" class="projects">
+      <h2 class="section-title">Proyectos Destacados</h2>
+      <div class="projects-grid">
+        <!-- Proyecto 1 -->
+        <article class="project-card">
+          <img src="assets/project1.jpg" alt="Plataforma E-commerce" class="project-image" />
+          <div class="project-info">
+            <h3>Plataforma E-commerce</h3>
+            <p>Tienda online con React y Node.js.</p>
+          </div>
+        </article>
+        <!-- Proyecto 2 -->
+        <article class="project-card">
+          <img src="assets/project2.jpg" alt="App de Fitness" class="project-image" />
+          <div class="project-info">
+            <h3>App de Fitness</h3>
+            <p>Aplicación multiplataforma con Flutter.</p>
+          </div>
+        </article>
+        <!-- Proyecto 3 -->
+        <article class="project-card">
+          <img src="assets/project3.jpg" alt="SaaS Empresarial" class="project-image" />
+          <div class="project-info">
+            <h3>SaaS Empresarial</h3>
+            <p>Gestión en la nube para PyMEs.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+      <h2 class="section-title">Últimos Artículos</h2>
+      <div class="blog-grid">
+        <article class="blog-card">
+          <img src="assets/blog1.jpg" alt="Flujo de Trabajo" class="blog-image" />
+          <div class="blog-info">
+            <h3>Cómo optimizar tu flujo de trabajo como desarrollador</h3>
+            <p>Consejos y herramientas para mejorar tu productividad.</p>
+            <a href="#" class="btn btn-read-more">Leer más</a>
+          </div>
+        </article>
+        <article class="blog-card">
+          <img src="assets/blog2.jpg" alt="IA en Desarrollo Web" class="blog-image" />
+          <div class="blog-info">
+            <h3>Introducción a la inteligencia artificial en el desarrollo web</h3>
+            <p>Explorando tendencias y herramientas actuales.</p>
+            <a href="#" class="btn btn-read-more">Leer más</a>
+          </div>
+        </article>
+        <article class="blog-card">
+          <img src="assets/blog3.jpg" alt="Seguridad Web" class="blog-image" />
+          <div class="blog-info">
+            <h3>Buenas prácticas de seguridad en aplicaciones web</h3>
+            <p>Protege tus aplicaciones de amenazas comunes.</p>
+            <a href="#" class="btn btn-read-more">Leer más</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <h2 class="section-title">Contacto</h2>
+      <form action="#" method="post" class="contact-form">
+        <div class="form-group">
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" name="email" placeholder="tu@correo.com" required />
+        </div>
+        <div class="form-group">
+          <label for="message">¿Cómo puedo ayudarte?</label>
+          <textarea id="message" name="message" rows="6" placeholder="Escribe tu mensaje aquí..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit-btn">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <img src="/resources/logoFinal.png" alt="Logo mauDEV" class="logo_footer" />
+      <nav class="footer-nav">
+        <ul class="footer-menu">
+          <li><a href="#projects" class="footer-link">Proyectos</a></li>
+          <li><a href="#shop"     class="footer-link">Tienda</a></li>
+          <li><a href="#blog"     class="footer-link">Blog</a></li>
+          <li><a href="#contact"  class="footer-link">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="social-icons">
+        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scroll.js"></script>
+</body>
+</html>
