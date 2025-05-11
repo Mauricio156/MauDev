@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>mauDEV - Portafolio y Merch Oficial</title>
-  <link rel="stylesheet" href="/assets/css/styles.css" />
-  <link rel="icon" href="/assets/images/logoFinal.png" type="image/x-icon" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="assets/images/logoFinal.png" type="image/x-icon" />
   <link 
     rel="stylesheet" 
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
@@ -13,43 +13,34 @@
     crossorigin="anonymous" 
     referrerpolicy="no-referrer" 
   />
-
 </head>
 <body>
   <header>
     <nav class="nav-container">
-      <img src="/assets/images/logoFinal.png"
+      <img src="assets/images/logoFinal.png"
            alt="Logo mauDEV"
            class="logo" />
-
-      <!-- Botón hamburguesa -->
       <div class="nav-toggle" id="nav-toggle">
         <span></span>
         <span></span>
         <span></span>
       </div>
-
       <ul class="nav-menu" id="nav-menu">
-        <li><a href="#hero"    class="nav-link">Inicio</a></li>
-        <li><a href="#projects"class="nav-link">Proyectos</a></li>
-        <li><a href="#blog"    class="nav-link">Blog</a></li>
+        <li><a href="#hero" class="nav-link">Inicio</a></li>
+        <li><a href="#projects" class="nav-link">Proyectos</a></li>
+        <li><a href="#blog" class="nav-link">Blog</a></li>
         <li><a href="#contact" class="nav-link">Contacto</a></li>
       </ul>
-
-        <!-- Botón de compra -->
-        <div class="nav-cart">
-          <a href="#shop" class="nav-cart-link">
-            <i class="fas fa-shopping-cart"></i>
-            <span class="cart-count">Tienda Oficial</span>
-          </a>
+      <div class="nav-cart">
+        <a href="#shop" class="nav-cart-link">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count">Tienda Oficial</span>
+        </a>
+      </div>
     </nav>
-
-    <!-- Capa que se difumina al abrir menú -->
     <div class="blur-background" id="blur-background"></div>
   </header>
-
   <main>
-    <!-- Hero Section -->
     <section id="hero" class="hero">
       <div class="hero-content">
         <div class="hero-text">
@@ -57,38 +48,33 @@
           <p>Desarrollador full-stack especializado en experiencias web y aplicaciones escalables.</p>
           <div class="cta-buttons">
             <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
-            <a href="#contact"  class="btn btn-secondary">Contactar</a>
+            <a href="#contact" class="btn btn-secondary">Contactar</a>
           </div>
         </div>
         <div class="hero-image">
-          <img src="/assets/images/hero-image.jpeg" alt="Desarrollo Web" />
+          <img src="assets/images/hero-image.jpeg" alt="Desarrollo Web" />
         </div>
       </div>
     </section>
-
-    <!-- Featured Projects -->
     <section id="projects" class="projects">
       <h2 class="section-title">Proyectos Destacados</h2>
       <div class="projects-grid">
-        <!-- Proyecto 1 -->
         <article class="project-card">
-          <img src="/assets/images/project1.jpg" alt="Plataforma E-commerce" class="project-image" />
+          <img src="assets/images/project1.jpg" alt="Plataforma E-commerce" class="project-image" />
           <div class="project-info">
             <h3>Plataforma E-commerce</h3>
             <p>Tienda online con React y Node.js.</p>
           </div>
         </article>
-        <!-- Proyecto 2 -->
         <article class="project-card">
-          <img src="/assets/images/project2.jpeg" alt="Plataforma E-commerce" class="project-image" />
+          <img src="assets/images/project2.jpeg" alt="App de Fitness" class="project-image" />
           <div class="project-info">
             <h3>App de Fitness</h3>
             <p>Aplicación multiplataforma con Flutter.</p>
           </div>
         </article>
-        <!-- Proyecto 3 -->
         <article class="project-card">
-          <img src="/assets/images/project2.webp" alt="Plataforma E-commerce" class="project-image" />
+          <img src="assets/images/project2.webp" alt="SaaS Empresarial" class="project-image" />
           <div class="project-info">
             <h3>SaaS Empresarial</h3>
             <p>Gestión en la nube para PyMEs.</p>
@@ -96,13 +82,11 @@
         </article>
       </div>
     </section>
-
-    <!-- Blog Section -->
     <section id="blog" class="blog">
       <h2 class="section-title">Últimos Artículos</h2>
       <div class="blog-grid">
         <article class="blog-card">
-          <img src="/assets/images/blog1.png" alt="Flujo de Trabajo" class="blog-image" />
+          <img src="assets/images/blog1.png" alt="Flujo de Trabajo" class="blog-image" />
           <div class="blog-info">
             <h3>Cómo optimizar tu flujo de trabajo como desarrollador</h3>
             <p>Consejos y herramientas para mejorar tu productividad.</p>
@@ -110,7 +94,7 @@
           </div>
         </article>
         <article class="blog-card">
-          <img src="/assets/images/blog2.jpg" alt="IA en Desarrollo Web" class="blog-image" />
+          <img src="assets/images/blog2.jpg" alt="IA en Desarrollo Web" class="blog-image" />
           <div class="blog-info">
             <h3>Introducción a la inteligencia artificial en el desarrollo web</h3>
             <p>Explorando tendencias y herramientas actuales.</p>
@@ -118,7 +102,7 @@
           </div>
         </article>
         <article class="blog-card">
-          <img src="/assets/images/blog3.webp" alt="Seguridad Web" class="blog-image" />
+          <img src="assets/images/blog3.webp" alt="Seguridad Web" class="blog-image" />
           <div class="blog-info">
             <h3>Buenas prácticas de seguridad en aplicaciones web</h3>
             <p>Protege tus aplicaciones de amenazas comunes.</p>
@@ -127,8 +111,6 @@
         </article>
       </div>
     </section>
-
-    <!-- Contact Section -->
     <section id="contact" class="contact">
       <h2 class="section-title">Contacto</h2>
       <form action="#" method="post" class="contact-form">
@@ -144,16 +126,15 @@
       </form>
     </section>
   </main>
-
   <footer>
     <div class="footer-container">
-      <img src="/assets/images/logoFinal.png" alt="Logo mauDEV" class="logo_footer" />
+      <img src="assets/images/logoFinal.png" alt="Logo mauDEV" class="logo_footer" />
       <nav class="footer-nav">
         <ul class="footer-menu">
           <li><a href="#projects" class="footer-link">Proyectos</a></li>
-          <li><a href="#shop"     class="footer-link">Tienda</a></li>
-          <li><a href="#blog"     class="footer-link">Blog</a></li>
-          <li><a href="#contact"  class="footer-link">Contacto</a></li>
+          <li><a href="#shop" class="footer-link">Tienda</a></li>
+          <li><a href="#blog" class="footer-link">Blog</a></li>
+          <li><a href="#contact" class="footer-link">Contacto</a></li>
         </ul>
       </nav>
       <div class="social-icons">
@@ -163,7 +144,6 @@
       </div>
     </div>
   </footer>
-
-  <script src="/assets/scripts/scroll.js"></script>
+  <script src="assets/scripts/scroll.js"></script>
 </body>
 </html>
