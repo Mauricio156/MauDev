@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>mauDEV - Portafolio y Merch Oficial</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="/assets/images/logoFinal.jpeg" type="image/jpeg" />
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" 
+  />
+</head>
+<body>
+  <header>
+    <nav class="nav-container">
+      <a href="index.html" class="logo-link">
+        <img src="/assets/images/logoFinal.jpeg" alt="Logo mauDEV" class="logo" />
+      </a>
+      <div class="nav-toggle" id="nav-toggle" aria-label="Menu" tabindex="0">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#hero" class="nav-link">Inicio</a></li>
+        <li><a href="#projects" class="nav-link">Proyectos</a></li>
+        <li><a href="shop.html" class="nav-link">Tienda</a></li>
+        <li><a href="#blog" class="nav-link">Blog</a></li>
+        <li><a href="#contact" class="nav-link">Contacto</a></li>
+        <li><a href="login.html" class="nav-link login-link">Iniciar Sesión</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="login-btn">Iniciar Sesión</a>
+        <a href="shop.html" class="nav-cart-link">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count">Tienda</span>
+        </a>
+      </div>
+    </nav>
+    <div class="blur-background" id="blur-background"></div>
+  </header>
+  <main>
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">Transformando ideas en soluciones digitales</h1>
+          <p class="hero-description">Desarrollador full-stack especializado en experiencias web y aplicaciones escalables.</p>
+          <div class="cta-buttons">
+            <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
+            <a href="shop.html" class="btn btn-secondary">Ver Tienda</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="assets/images/hero-image.jpeg" alt="Desarrollo Web" />
+          <div class="hero-decoration"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <h2 class="section-title">Proyectos Destacados</h2>
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-image-container">
+            <img src="assets/images/project1.jpg" alt="Plataforma E-commerce" class="project-image" />
+            <div class="project-overlay">
+              <div class="project-tech">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Node.js</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Plataforma E-commerce</h3>
+            <p>Tienda online completa con sistema de pagos y gestión de inventario.</p>
+            <a href="#" class="btn btn-outline">Ver detalles</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-image-container">
+            <img src="assets/images/project2.jpeg" alt="App de Fitness" class="project-image" />
+            <div class="project-overlay">
+              <div class="project-tech">
+                <span class="tech-tag">Flutter</span>
+                <span class="tech-tag">Firebase</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>App de Fitness</h3>
+            <p>Aplicación multiplataforma para seguimiento de ejercicios y nutrición.</p>
+            <a href="#" class="btn btn-outline">Ver detalles</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-image-container">
+            <img src="assets/images/project2.webp" alt="SaaS Empresarial" class="project-image" />
+            <div class="project-overlay">
+              <div class="project-tech">
+                <span class="tech-tag">Vue.js</span>
+                <span class="tech-tag">Python</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>SaaS Empresarial</h3>
+            <p>Sistema de gestión empresarial en la nube para PyMEs.</p>
+            <a href="#" class="btn btn-outline">Ver detalles</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="blog" class="blog">
+      <h2 class="section-title">Últimos Artículos</h2>
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div class="blog-image-container">
+            <img src="assets/images/blog1.png" alt="Flujo de Trabajo" class="blog-image" />
+            <span class="blog-tag">Productividad</span>
+          </div>
+          <div class="blog-info">
+            <h3>Cómo optimizar tu flujo de trabajo como desarrollador</h3>
+            <p>Consejos y herramientas para mejorar tu productividad diaria.</p>
+            <div class="blog-meta">
+              <span class="blog-date">15 Dic 2024</span>
+              <span class="blog-read-time">5 min lectura</span>
+            </div>
+            <a href="#" class="btn btn-read-more">Leer más</a>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-image-container">
+            <img src="assets/images/blog2.jpg" alt="IA en Desarrollo Web" class="blog-image" />
+            <span class="blog-tag">Inteligencia Artificial</span>
+          </div>
+          <div class="blog-info">
+            <h3>Introducción a la inteligencia artificial en el desarrollo web</h3>
+            <p>Explorando las últimas tendencias y herramientas de IA.</p>
+            <div class="blog-meta">
+              <span class="blog-date">10 Dic 2024</span>
+              <span class="blog-read-time">8 min lectura</span>
+            </div>
+            <a href="#" class="btn btn-read-more">Leer más</a>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-image-container">
+            <img src="assets/images/blog3.webp" alt="Seguridad Web" class="blog-image" />
+            <span class="blog-tag">Seguridad</span>
+          </div>
+          <div class="blog-info">
+            <h3>Buenas prácticas de seguridad en aplicaciones web</h3>
+            <p>Protege tus aplicaciones de las amenazas más comunes.</p>
+            <div class="blog-meta">
+              <span class="blog-date">5 Dic 2024</span>
+              <span class="blog-read-time">12 min lectura</span>
+            </div>
+            <a href="#" class="btn btn-read-more">Leer más</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2 class="section-title">Contacto</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h4>Email</h4>
+              <p>contacto@maudev.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h4>Ubicación</h4>
+              <p>Ciudad de México, México</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-clock"></i>
+            <div>
+              <h4>Horario</h4>
+              <p>Lun - Vie: 9:00 - 18:00</p>
+            </div>
+          </div>
+          <div class="contact-social">
+            <a href="#" class="social-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+        <form action="contact.php" method="post" class="contact-form" autocomplete="off">
+          <div class="form-group">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" placeholder="Tu nombre" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" placeholder="tu@correo.com" required />
+          </div>
+          <div class="form-group">
+            <label for="message">¿Cómo puedo ayudarte?</label>
+            <textarea id="message" name="message" rows="6" placeholder="Escribe tu mensaje aquí..." required></textarea>
+          </div>
+          <button type="submit" class="form-submit-btn">
+            <span>Enviar</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <img src="assets/images/logoFinal.jpeg" alt="Logo mauDEV" class="logo_footer" />
+        <p>Transformando ideas en soluciones digitales desde 2020.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Enlaces rápidos</h3>
+        <nav class="footer-nav">
+          <ul class="footer-menu">
+            <li><a href="#projects" class="footer-link">Proyectos</a></li>
+            <li><a href="shop.html" class="footer-link">Tienda</a></li>
+            <li><a href="#blog" class="footer-link">Blog</a></li>
+            <li><a href="#contact" class="footer-link">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-newsletter">
+        <h3>Suscríbete al newsletter</h3>
+        <form action="newsletter.php" method="post" class="newsletter-form" autocomplete="off">
+          <input type="email" name="email" placeholder="Tu correo electrónico" required />
+          <button type="submit">Suscribirse</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 mauDEV. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tienda - mauDEV</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="assets/images/logoFinal.jpeg" type="image/jpeg" />
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" 
+  />
+</head>
+<body>
+  <header>
+    <nav class="nav-container">
+      <a href="index.html" class="logo-link">
+        <img src="assets/images/logoFinal.jpeg" alt="Logo mauDEV" class="logo" />
+      </a>
+      <div class="nav-toggle" id="nav-toggle" aria-label="Menu" tabindex="0">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html" class="nav-link">Inicio</a></li>
+        <li><a href="index.html#projects" class="nav-link">Proyectos</a></li>
+        <li><a href="shop.html" class="nav-link active">Tienda</a></li>
+        <li><a href="index.html#blog" class="nav-link">Blog</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contacto</a></li>
+        <li><a href="login.html" class="nav-link login-link">Iniciar Sesión</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="login-btn">Iniciar Sesión</a>
+        <a href="#" class="nav-cart-link" id="cart-toggle">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count" id="cart-count">0</span>
+        </a>
+      </div>
+    </nav>
+    <div class="blur-background" id="blur-background"></div>
+  </header>
+
+  <main>
+    <section class="shop-hero">
+      <div class="shop-hero-content">
+        <h1 class="shop-title">Tienda Oficial mauDEV</h1>
+        <p class="shop-description">Descubre nuestra colección exclusiva de arte digital y merchandise</p>
+      </div>
+    </section>
+
+    <section class="shop-filters">
+      <div class="filters-container">
+        <div class="filter-group">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="art">Arte Digital</button>
+          <button class="filter-btn" data-filter="merch">Merchandise</button>
+          <button class="filter-btn" data-filter="prints">Prints</button>
+        </div>
+        <div class="sort-group">
+          <select class="sort-select" id="sort-select">
+            <option value="default">Ordenar por</option>
+            <option value="price-low">Precio: Menor a Mayor</option>
+            <option value="price-high">Precio: Mayor a Menor</option>
+            <option value="name">Nombre A-Z</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="shop-products">
+      <div class="products-grid" id="products-grid">
+        <!-- Los productos se cargarán dinámicamente -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">
+      <h3>Carrito de Compras</h3>
+      <button class="cart-close" id="cart-close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <!-- Los items del carrito se cargarán aquí -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <strong>Total: $<span id="cart-total">0.00</span></strong>
+      </div>
+      <button class="btn btn-primary cart-checkout">Proceder al Pago</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <img src="assets/images/logoFinal.jpeg" alt="Logo mauDEV" class="logo_footer" />
+        <p>Transformando ideas en soluciones digitales desde 2020.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Enlaces rápidos</h3>
+        <nav class="footer-nav">
+          <ul class="footer-menu">
+            <li><a href="index.html#projects" class="footer-link">Proyectos</a></li>
+            <li><a href="shop.html" class="footer-link">Tienda</a></li>
+            <li><a href="index.html#blog" class="footer-link">Blog</a></li>
+            <li><a href="index.html#contact" class="footer-link">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-newsletter">
+        <h3>Suscríbete al newsletter</h3>
+        <form action="newsletter.php" method="post" class="newsletter-form">
+          <input type="email" name="email" placeholder="Tu correo electrónico" required />
+          <button type="submit">Suscribirse</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 mauDEV. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/shop.js"></script>
+</body>
+</html>
