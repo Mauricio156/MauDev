@@ -5,7 +5,7 @@ const products = [
     name: "Camiseta Negra con Logo",
     description: "Camiseta de algodón orgánico con diseño exclusivo",
     price: 250.0,
-      image: "assets/images/id1_shop.png?height=250&width=250",
+    image: "assets/images/id1_shop.png?height=250&width=250",
     category: "Ropa",
     badge: "Nuevo",
   },
@@ -64,6 +64,33 @@ document.addEventListener("DOMContentLoaded", () => {
   const cartSidebar = document.getElementById("cart-sidebar")
   const cartClose = document.getElementById("cart-close")
   const cartCount = document.getElementById("cart-count")
+  const shopFilters = document.querySelector(".shop-filters")
+
+  // --------- OCULTAR/MOSTRAR FILTROS ---------
+  function hideShopFilters(hide = true) {
+    if (shopFilters) {
+      if (hide) {
+        shopFilters.classList.add("hidden")
+      } else {
+        shopFilters.classList.remove("hidden")
+      }
+    }
+  }
+
+  // --------- OCULTAR FILTROS AL HACER SCROLL Y MOSTRAR SOLO SI LLEGA ARRIBA ---------
+  window.addEventListener("scroll", () => {
+    if (!shopFilters) return
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+
+    if (scrollTop <= 0) {
+      // Llegó al tope de la página
+      shopFilters.classList.remove("hidden")
+    } else if (scrollTop > 100) {
+      // Scroll hacia abajo
+      shopFilters.classList.add("hidden")
+    }
+    // Si el usuario sube pero no llega al tope, los filtros siguen ocultos.
+  })
 
   // Renderizar productos
   function renderProducts(productsToRender = products) {
@@ -254,6 +281,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault()
       cartSidebar.classList.add("active")
       document.body.style.overflow = "hidden"
+      hideShopFilters(true) // Oculta los filtros al abrir el carrito
     })
   }
 
@@ -261,18 +289,25 @@ document.addEventListener("DOMContentLoaded", () => {
     cartClose.addEventListener("click", () => {
       cartSidebar.classList.remove("active")
       document.body.style.overflow = "auto"
+      hideShopFilters(false) // Muestra los filtros al cerrar el carrito
     })
   }
 
   // Cerrar carrito al hacer clic fuera
   document.addEventListener("click", (e) => {
-    if (cartSidebar.classList.contains("active") && !cartSidebar.contains(e.target) && !cartToggle.contains(e.target)) {
+    if (
+      cartSidebar.classList.contains("active") &&
+      !cartSidebar.contains(e.target) &&
+      !cartToggle.contains(e.target)
+    ) {
       cartSidebar.classList.remove("active")
       document.body.style.overflow = "auto"
+      hideShopFilters(false) // Muestra los filtros al cerrar el carrito
     }
   })
 
   // Inicializar
   renderProducts()
   updateCartUI()
+  hideShopFilters(false) // Por si acaso, muestra los filtros al cargar
 })
