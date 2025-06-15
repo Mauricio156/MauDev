@@ -228,9 +228,9 @@ header {
 }
 
 .cart-count {
-  background: var(--accent);
+  background: black;
   color: white;
-  border-radius: 50%;
+  border-radius: 15%;
   padding: 0.2rem 0.5rem;
   font-size: 0.8rem;
   min-width: 20px;
