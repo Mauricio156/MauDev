@@ -5,11 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>mauDEV - Portafolio y Merch Oficial</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="icon" href="assets/images/logoFinal.png" type="image/x-icon" />
+  <link rel="icon" href="assets/images/logoFinal.jpeg" type="image/x-icon" />
   <link 
     rel="stylesheet" 
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
-    integrity="sha512-..." 
     crossorigin="anonymous" 
     referrerpolicy="no-referrer" 
   />
@@ -17,9 +16,9 @@
 <body>
   <header>
     <nav class="nav-container">
-      <img src="assets/images/logoFinal.png"
-           alt="Logo mauDEV"
-           class="logo" />
+      <a href="index.html" class="logo-link">
+        <img src="assets/images/logoFinal.jpeg" alt="Logo mauDEV" class="logo-header" />
+      </a>
       <div class="nav-toggle" id="nav-toggle">
         <span></span>
         <span></span>
@@ -30,11 +29,13 @@
         <li><a href="#projects" class="nav-link">Proyectos</a></li>
         <li><a href="#blog" class="nav-link">Blog</a></li>
         <li><a href="#contact" class="nav-link">Contacto</a></li>
+        <li><a href="login.html" class="nav-link login-link">Iniciar Sesión</a></li>
       </ul>
-      <div class="nav-cart">
+      <div class="nav-actions">
+        <a href="login.html" class="login-btn">Iniciar Sesión</a>
         <a href="#shop" class="nav-cart-link">
           <i class="fas fa-shopping-cart"></i>
-          <span class="cart-count">Tienda Oficial</span>
+          <span class="cart-count">Tienda</span>
         </a>
       </div>
     </nav>
@@ -60,24 +61,33 @@
       <h2 class="section-title">Proyectos Destacados</h2>
       <div class="projects-grid">
         <article class="project-card">
-          <img src="assets/images/project1.jpg" alt="Plataforma E-commerce" class="project-image" />
+          <div class="project-image-container">
+            <img src="assets/images/project1.jpg" alt="Plataforma E-commerce" class="project-image" />
+          </div>
           <div class="project-info">
             <h3>Plataforma E-commerce</h3>
             <p>Tienda online con React y Node.js.</p>
+            <a href="#" class="btn btn-outline">Ver detalles</a>
           </div>
         </article>
         <article class="project-card">
-          <img src="assets/images/project2.jpeg" alt="App de Fitness" class="project-image" />
+          <div class="project-image-container">
+            <img src="assets/images/project2.jpeg" alt="App de Fitness" class="project-image" />
+          </div>
           <div class="project-info">
             <h3>App de Fitness</h3>
             <p>Aplicación multiplataforma con Flutter.</p>
+            <a href="#" class="btn btn-outline">Ver detalles</a>
           </div>
         </article>
         <article class="project-card">
-          <img src="assets/images/project2.webp" alt="SaaS Empresarial" class="project-image" />
+          <div class="project-image-container">
+            <img src="assets/images/project2.webp" alt="SaaS Empresarial" class="project-image" />
+          </div>
           <div class="project-info">
             <h3>SaaS Empresarial</h3>
             <p>Gestión en la nube para PyMEs.</p>
+            <a href="#" class="btn btn-outline">Ver detalles</a>
           </div>
         </article>
       </div>
@@ -86,7 +96,10 @@
       <h2 class="section-title">Últimos Artículos</h2>
       <div class="blog-grid">
         <article class="blog-card">
-          <img src="assets/images/blog1.png" alt="Flujo de Trabajo" class="blog-image" />
+          <div class="blog-image-container">
+            <img src="assets/images/blog1.png" alt="Flujo de Trabajo" class="blog-image" />
+            <span class="blog-tag">Productividad</span>
+          </div>
           <div class="blog-info">
             <h3>Cómo optimizar tu flujo de trabajo como desarrollador</h3>
             <p>Consejos y herramientas para mejorar tu productividad.</p>
@@ -94,7 +107,10 @@
           </div>
         </article>
         <article class="blog-card">
-          <img src="assets/images/blog2.jpg" alt="IA en Desarrollo Web" class="blog-image" />
+          <div class="blog-image-container">
+            <img src="assets/images/blog2.jpg" alt="IA en Desarrollo Web" class="blog-image" />
+            <span class="blog-tag">Inteligencia Artificial</span>
+          </div>
           <div class="blog-info">
             <h3>Introducción a la inteligencia artificial en el desarrollo web</h3>
             <p>Explorando tendencias y herramientas actuales.</p>
@@ -102,7 +118,10 @@
           </div>
         </article>
         <article class="blog-card">
-          <img src="assets/images/blog3.webp" alt="Seguridad Web" class="blog-image" />
+          <div class="blog-image-container">
+            <img src="assets/images/blog3.webp" alt="Seguridad Web" class="blog-image" />
+            <span class="blog-tag">Seguridad</span>
+          </div>
           <div class="blog-info">
             <h3>Buenas prácticas de seguridad en aplicaciones web</h3>
             <p>Protege tus aplicaciones de amenazas comunes.</p>
@@ -113,39 +132,113 @@
     </section>
     <section id="contact" class="contact">
       <h2 class="section-title">Contacto</h2>
-      <form action="#" method="post" class="contact-form">
-        <div class="form-group">
-          <label for="email">Correo electrónico:</label>
-          <input type="email" id="email" name="email" placeholder="tu@correo.com" required />
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <p>contacto@maudev.com</p>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>Ciudad de México, México</p>
+          </div>
+          <div class="contact-social">
+            <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="message">¿Cómo puedo ayudarte?</label>
-          <textarea id="message" name="message" rows="6" placeholder="Escribe tu mensaje aquí..." required></textarea>
-        </div>
-        <button type="submit" class="form-submit-btn">Enviar</button>
-      </form>
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" placeholder="Tu nombre" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" placeholder="tu@correo.com" required />
+          </div>
+          <div class="form-group">
+            <label for="message">¿Cómo puedo ayudarte?</label>
+            <textarea id="message" name="message" rows="6" placeholder="Escribe tu mensaje aquí..." required></textarea>
+          </div>
+          <button type="submit" class="form-submit-btn">Enviar</button>
+        </form>
+      </div>
     </section>
   </main>
   <footer>
     <div class="footer-container">
-      <img src="assets/images/logoFinal.png" alt="Logo mauDEV" class="logo_footer" />
-      <nav class="footer-nav">
-        <ul class="footer-menu">
-          <li><a href="#projects" class="footer-link">Proyectos</a></li>
-          <li><a href="#shop" class="footer-link">Tienda</a></li>
-          <li><a href="#blog" class="footer-link">Blog</a></li>
-          <li><a href="#contact" class="footer-link">Contacto</a></li>
-        </ul>
-      </nav>
-      <div class="social-icons">
-        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+      <div class="footer-brand">
+        <img src="assets/images/logoFinal.jpeg" alt="Logo mauDEV" class="logo_footer" />
+        <p>Transformando ideas en soluciones digitales desde 2020.</p>
       </div>
+      <div class="footer-links">
+        <h3>Enlaces rápidos</h3>
+        <nav class="footer-nav">
+          <ul class="footer-menu">
+            <li><a href="#projects" class="footer-link">Proyectos</a></li>
+            <li><a href="#shop" class="footer-link">Tienda</a></li>
+            <li><a href="#blog" class="footer-link">Blog</a></li>
+            <li><a href="#contact" class="footer-link">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-newsletter">
+        <h3>Suscríbete al newsletter</h3>
+        <form action="newsletter.php" method="post" class="newsletter-form">
+          <input type="email" name="email" placeholder="Tu correo electrónico" required />
+          <button type="submit">Suscribirse</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 mauDEV. Todos los derechos reservados.</p>
     </div>
   </footer>
 
-  <script src="assets/scripts/scroll.js"></script>
+  <script src="assets/js/main.js"></script>
+  <!-- Firebase SDK y lógica de contacto -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
 
+    // Configuración de tu proyecto Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyCXzt7XV3uLeMMX2yYb0nh6YUcPxWEqslY",
+      authDomain: "maudev-3d79e.firebaseapp.com",
+      projectId: "maudev-3d79e",
+      storageBucket: "maudev-3d79e.appspot.com",
+      messagingSenderId: "382546843159",
+      appId: "1:382546843159:web:5aa03379cac78f99ab2e52",
+      measurementId: "G-XBVFK42LJ5"
+    };
+
+    // Inicializa Firebase y Firestore
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Captura el submit del formulario de contacto
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const nombre = contactForm.name.value;
+        const email = contactForm.email.value;
+        const mensaje = contactForm.message.value;
+
+        try {
+          await addDoc(collection(db, "contact_messages"), {
+            name: nombre,
+            email: email,
+            message: mensaje,
+            createdAt: serverTimestamp()
+          });
+          contactForm.reset();
+        } catch (error) {
+          alert('Error al enviar el mensaje: ' + error.message);
+        }
+      });
+    }
+  </script>
 </body>
 </html>

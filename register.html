@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registro - mauDEV</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="assets/images/logoFinal.jpeg" type="image/x-icon" />
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" 
+  />
+</head>
+<body>
+  <header>
+    <nav class="nav-container">
+      <a href="index.html" class="logo-link">
+        <img src="assets/images/logoFinal.jpeg" alt="Logo mauDEV" class="logo-header" />
+      </a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html" class="nav-link">Inicio</a></li>
+        <li><a href="index.html#projects" class="nav-link">Proyectos</a></li>
+        <li><a href="index.html#blog" class="nav-link">Blog</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contacto</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="login-btn">Iniciar Sesión</a>
+        <a href="#shop" class="nav-cart-link">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count">Tienda</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="auth-section">
+      <div class="auth-container">
+        <h2>Crear una cuenta</h2>
+        <form id="firebase-register-form" class="auth-form">
+          <div class="form-group">
+            <label for="register-name">Nombre completo</label>
+            <div class="input-icon-wrapper">
+              <i class="fas fa-user"></i>
+              <input type="text" id="register-name" name="name" placeholder="Tu nombre completo" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="register-email">Correo electrónico</label>
+            <div class="input-icon-wrapper">
+              <i class="fas fa-envelope"></i>
+              <input type="email" id="register-email" name="email" placeholder="tu@correo.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="register-password">Contraseña</label>
+            <div class="input-icon-wrapper">
+              <i class="fas fa-lock"></i>
+              <input type="password" id="register-password" name="password" placeholder="Crea una contraseña" required />
+              <button type="button" class="toggle-password"><i class="fas fa-eye"></i></button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="register-confirm">Confirmar contraseña</label>
+            <div class="input-icon-wrapper">
+              <i class="fas fa-lock"></i>
+              <input type="password" id="register-confirm" name="confirm_password" placeholder="Confirma tu contraseña" required />
+            </div>
+          </div>
+          <div class="form-options">
+            <div class="terms-check">
+              <input type="checkbox" id="terms" name="terms" required />
+              <label for="terms">Acepto los <a href="#">términos y condiciones</a></label>
+            </div>
+          </div>
+          <button type="submit" class="auth-submit-btn">Crear Cuenta</button>
+        </form>
+        <p style="margin-top:2rem;text-align:center;">¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <img src="assets/images/logoFinal.jpeg" alt="Logo mauDEV" class="logo_footer" />
+        <p>Transformando ideas en soluciones digitales desde 2020.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Enlaces rápidos</h3>
+        <nav class="footer-nav">
+          <ul class="footer-menu">
+            <li><a href="index.html#projects" class="footer-link">Proyectos</a></li>
+            <li><a href="#shop" class="footer-link">Tienda</a></li>
+            <li><a href="index.html#blog" class="footer-link">Blog</a></li>
+            <li><a href="index.html#contact" class="footer-link">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-newsletter">
+        <h3>Suscríbete al newsletter</h3>
+        <form action="newsletter.php" method="post" class="newsletter-form">
+          <input type="email" name="email" placeholder="Tu correo electrónico" required />
+          <button type="submit">Suscribirse</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 mauDEV. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+  <!-- Script de registro Firebase -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+    import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
+
+    // Configuración de Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyCXzt7XV3uLeMMX2yYb0nh6YUcPxWEqslY",
+      authDomain: "maudev-3d79e.firebaseapp.com",
+      projectId: "maudev-3d79e",
+      storageBucket: "maudev-3d79e.appspot.com",
+      messagingSenderId: "382546843159",
+      appId: "1:382546843159:web:5aa03379cac78f99ab2e52",
+      measurementId: "G-XBVFK42LJ5"
+    };
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    // Mostrar/ocultar contraseña
+    document.querySelectorAll('.toggle-password').forEach(toggle => {
+      toggle.addEventListener('click', function() {
+        const input = this.parentElement.querySelector('input');
+        const icon = this.querySelector('i');
+        if (input.type === 'password') {
+          input.type = 'text';
+          icon.classList.remove('fa-eye');
+          icon.classList.add('fa-eye-slash');
+        } else {
+          input.type = 'password';
+          icon.classList.remove('fa-eye-slash');
+          icon.classList.add('fa-eye');
+        }
+      });
+    });
+
+    // Registro de usuario
+    const registerForm = document.getElementById('firebase-register-form');
+    if (registerForm) {
+      registerForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const name = registerForm.name.value.trim();
+        const email = registerForm.email.value.trim();
+        const password = registerForm.password.value;
+        const confirm = registerForm.confirm_password.value;
+        const terms = registerForm.terms.checked;
+
+        if (!terms) {
+          alert('Debes aceptar los términos y condiciones.');
+          return;
+        }
+        if (password !== confirm) {
+          alert('Las contraseñas no coinciden.');
+          return;
+        }
+
+        try {
+          const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+          // Guarda el nombre en Firestore
+          await setDoc(doc(db, "users", userCredential.user.uid), {
+            name: name,
+            email: email,
+            createdAt: new Date()
+          });
+          alert('¡Registro exitoso! Ahora puedes iniciar sesión.');
+          window.location.href = "login.html";
+        } catch (error) {
+          alert('Error al registrar: ' + error.message);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
