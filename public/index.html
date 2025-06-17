@@ -29,14 +29,16 @@
         <li><a href="#projects" class="nav-link">Proyectos</a></li>
         <li><a href="#blog" class="nav-link">Blog</a></li>
         <li><a href="#contact" class="nav-link">Contacto</a></li>
-        <li><a href="login.html" class="nav-link login-link">Iniciar Sesión</a></li>
+        <li><a href="login.html" class="nav-link login-link" id="login-nav-link">Iniciar Sesión</a></li>
       </ul>
       <div class="nav-actions">
-        <a href="login.html" class="login-btn">Iniciar Sesión</a>
+        <a href="login.html" class="login-btn" id="login-btn">Iniciar Sesión</a>
         <a href="#shop" class="nav-cart-link">
           <i class="fas fa-shopping-cart"></i>
           <span class="cart-count">Tienda</span>
         </a>
+        <button id="logout-btn" style="display:none;">Cerrar Sesión</button>
+        <span id="session-status" style="margin-left:10px;"></span>
       </div>
     </nav>
     <div class="blur-background" id="blur-background"></div>
@@ -197,10 +199,11 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
-  <!-- Firebase SDK y lógica de contacto -->
+  <!-- Firebase SDK y lógica de contacto/autenticación -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
     import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
 
     // Configuración de tu proyecto Firebase
     const firebaseConfig = {
@@ -216,6 +219,7 @@
     // Inicializa Firebase y Firestore
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
+    const auth = getAuth(app);
 
     // Captura el submit del formulario de contacto
     const contactForm = document.querySelector('.contact-form');
@@ -239,6 +243,32 @@
         }
       });
     }
+
+    // Control de sesión (Mostrar estado y botón de logout)
+    const logoutBtn = document.getElementById('logout-btn');
+    const sessionStatus = document.getElementById('session-status');
+    const loginBtn = document.getElementById('login-btn');
+    const loginNavLink = document.getElementById('login-nav-link');
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // Sesión activa
+        sessionStatus.textContent = `Sesión activa: ${user.email}`;
+        if (logoutBtn) logoutBtn.style.display = 'inline-block';
+        if (loginBtn) loginBtn.style.display = 'none';
+        if (loginNavLink) loginNavLink.style.display = 'none';
+      } else {
+        // Sin sesión
+        sessionStatus.textContent = "Sin sesión activa";
+        if (logoutBtn) logoutBtn.style.display = 'none';
+        if (loginBtn) loginBtn.style.display = 'inline-block';
+        if (loginNavLink) loginNavLink.style.display = 'inline-block';
+      }
+    });
+
+    logoutBtn?.addEventListener('click', async () => {
+      await signOut(auth);
+    });
   </script>
 </body>
 </html>

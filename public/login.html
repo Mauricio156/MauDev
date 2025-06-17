@@ -78,19 +78,6 @@
             </div>
             <button type="submit" class="auth-submit-btn">Iniciar Sesión</button>
           </form>
-          <div class="social-login">
-            <p>O inicia sesión con</p>
-            <div class="social-login-buttons">
-              <button class="social-btn google" id="google-login-btn" type="button">
-                <i class="fab fa-google"></i>
-                Google
-              </button>
-              <button class="social-btn github" id="github-login-btn" type="button">
-                <i class="fab fa-github"></i>
-                GitHub
-              </button>
-            </div>
-          </div>
         </div>
         
         <div class="auth-form-container hidden" id="register-form">
@@ -179,7 +166,7 @@
   <!-- Script de Firebase Auth -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
-    import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider, GithubAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+    import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
     import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
     
     // Tu configuración de Firebase
@@ -262,36 +249,6 @@
           window.location.href = "index.html";
         } catch (error) {
           alert('Error al registrar: ' + error.message);
-        }
-      });
-    }
-
-    // Google Login
-    const googleBtn = document.getElementById('google-login-btn');
-    if (googleBtn) {
-      googleBtn.addEventListener('click', async function() {
-        const provider = new GoogleAuthProvider();
-        try {
-          await signInWithPopup(auth, provider);
-          alert('¡Inicio de sesión con Google exitoso!');
-          window.location.href = "index.html";
-        } catch (error) {
-          alert('Error con Google: ' + error.message);
-        }
-      });
-    }
-
-    // GitHub Login
-    const githubBtn = document.getElementById('github-login-btn');
-    if (githubBtn) {
-      githubBtn.addEventListener('click', async function() {
-        const provider = new GithubAuthProvider();
-        try {
-          await signInWithPopup(auth, provider);
-          alert('¡Inicio de sesión con GitHub exitoso!');
-          window.location.href = "index.html";
-        } catch (error) {
-          alert('Error con GitHub: ' + error.message);
         }
       });
     }
