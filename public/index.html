@@ -1,89 +1,244 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
-
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/11.9.1/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/11.9.1/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>mauDEV - Portafolio y Merch Oficial</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="assets/images/logoFinal.jpeg" type="image/x-icon" />
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" 
+  />
+</head>
+<body>
+  <header>
+    <nav class="nav-container">
+      <a href="index.html" class="logo-link">
+        <img src="assets/images/logoFinal.jpeg" alt="Logo mauDEV" class="logo-header" />
+      </a>
+      <div class="nav-toggle" id="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#hero" class="nav-link">Inicio</a></li>
+        <li><a href="#projects" class="nav-link">Proyectos</a></li>
+        <li><a href="#blog" class="nav-link">Blog</a></li>
+        <li><a href="#contact" class="nav-link">Contacto</a></li>
+        <li><a href="login.html" class="nav-link login-link">Iniciar Sesión</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="login-btn">Iniciar Sesión</a>
+        <a href="#shop" class="nav-cart-link">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count">Tienda</span>
+        </a>
+      </div>
+    </nav>
+    <div class="blur-background" id="blur-background"></div>
+  </header>
+  <main>
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Transformando ideas en soluciones digitales</h1>
+          <p>Desarrollador full-stack especializado en experiencias web y aplicaciones escalables.</p>
+          <div class="cta-buttons">
+            <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
+            <a href="#contact" class="btn btn-secondary">Contactar</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="assets/images/hero-image.jpeg" alt="Desarrollo Web" />
+        </div>
+      </div>
+    </section>
+    <section id="projects" class="projects">
+      <h2 class="section-title">Proyectos Destacados</h2>
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-image-container">
+            <img src="assets/images/project1.jpg" alt="Plataforma E-commerce" class="project-image" />
+          </div>
+          <div class="project-info">
+            <h3>Plataforma E-commerce</h3>
+            <p>Tienda online con React y Node.js.</p>
+            <a href="#" class="btn btn-outline">Ver detalles</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-image-container">
+            <img src="assets/images/project2.jpeg" alt="App de Fitness" class="project-image" />
+          </div>
+          <div class="project-info">
+            <h3>App de Fitness</h3>
+            <p>Aplicación multiplataforma con Flutter.</p>
+            <a href="#" class="btn btn-outline">Ver detalles</a>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-image-container">
+            <img src="assets/images/project2.webp" alt="SaaS Empresarial" class="project-image" />
+          </div>
+          <div class="project-info">
+            <h3>SaaS Empresarial</h3>
+            <p>Gestión en la nube para PyMEs.</p>
+            <a href="#" class="btn btn-outline">Ver detalles</a>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section id="blog" class="blog">
+      <h2 class="section-title">Últimos Artículos</h2>
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div class="blog-image-container">
+            <img src="assets/images/blog1.png" alt="Flujo de Trabajo" class="blog-image" />
+            <span class="blog-tag">Productividad</span>
+          </div>
+          <div class="blog-info">
+            <h3>Cómo optimizar tu flujo de trabajo como desarrollador</h3>
+            <p>Consejos y herramientas para mejorar tu productividad.</p>
+            <a href="#" class="btn btn-read-more">Leer más</a>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-image-container">
+            <img src="assets/images/blog2.jpg" alt="IA en Desarrollo Web" class="blog-image" />
+            <span class="blog-tag">Inteligencia Artificial</span>
+          </div>
+          <div class="blog-info">
+            <h3>Introducción a la inteligencia artificial en el desarrollo web</h3>
+            <p>Explorando tendencias y herramientas actuales.</p>
+            <a href="#" class="btn btn-read-more">Leer más</a>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-image-container">
+            <img src="assets/images/blog3.webp" alt="Seguridad Web" class="blog-image" />
+            <span class="blog-tag">Seguridad</span>
+          </div>
+          <div class="blog-info">
+            <h3>Buenas prácticas de seguridad en aplicaciones web</h3>
+            <p>Protege tus aplicaciones de amenazas comunes.</p>
+            <a href="#" class="btn btn-read-more">Leer más</a>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section id="contact" class="contact">
+      <h2 class="section-title">Contacto</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <p>contacto@maudev.com</p>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>Ciudad de México, México</p>
+          </div>
+          <div class="contact-social">
+            <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" placeholder="Tu nombre" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" placeholder="tu@correo.com" required />
+          </div>
+          <div class="form-group">
+            <label for="message">¿Cómo puedo ayudarte?</label>
+            <textarea id="message" name="message" rows="6" placeholder="Escribe tu mensaje aquí..." required></textarea>
+          </div>
+          <button type="submit" class="form-submit-btn">Enviar</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <img src="assets/images/logoFinal.jpeg" alt="Logo mauDEV" class="logo_footer" />
+        <p>Transformando ideas en soluciones digitales desde 2020.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Enlaces rápidos</h3>
+        <nav class="footer-nav">
+          <ul class="footer-menu">
+            <li><a href="#projects" class="footer-link">Proyectos</a></li>
+            <li><a href="#shop" class="footer-link">Tienda</a></li>
+            <li><a href="#blog" class="footer-link">Blog</a></li>
+            <li><a href="#contact" class="footer-link">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-newsletter">
+        <h3>Suscríbete al newsletter</h3>
+        <form action="newsletter.php" method="post" class="newsletter-form">
+          <input type="email" name="email" placeholder="Tu correo electrónico" required />
+          <button type="submit">Suscribirse</button>
+        </form>
+      </div>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+    <div class="footer-bottom">
+      <p>&copy; 2024 mauDEV. Todos los derechos reservados.</p>
+    </div>
+  </footer>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+  <script src="assets/js/main.js"></script>
+  <!-- Firebase SDK y lógica de contacto -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
+
+    // Configuración de tu proyecto Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyCXzt7XV3uLeMMX2yYb0nh6YUcPxWEqslY",
+      authDomain: "maudev-3d79e.firebaseapp.com",
+      projectId: "maudev-3d79e",
+      storageBucket: "maudev-3d79e.appspot.com",
+      messagingSenderId: "382546843159",
+      appId: "1:382546843159:web:5aa03379cac78f99ab2e52",
+      measurementId: "G-XBVFK42LJ5"
+    };
+
+    // Inicializa Firebase y Firestore
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Captura el submit del formulario de contacto
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const nombre = contactForm.name.value;
+        const email = contactForm.email.value;
+        const mensaje = contactForm.message.value;
 
         try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+          await addDoc(collection(db, "contact_messages"), {
+            name: nombre,
+            email: email,
+            message: mensaje,
+            createdAt: serverTimestamp()
+          });
+          contactForm.reset();
+        } catch (error) {
+          alert('Error al enviar el mensaje: ' + error.message);
         }
       });
-    </script>
-  </body>
+    }
+  </script>
+</body>
 </html>
